@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
+import { useState, useEffect }  from 'react';
 import './App.css';
+import api from './api/axiosConfig';
+import InputField from './components/InputField';
 
-function App() {
+const App: React.FC = () => {
+
+  const [listings, setListings] = useState<string[]>([]);
+
+  const getListings = async () => {
+    try {
+      const response = await api.get("/listings");
+      console.log(response.data);
+      setListings(response.data);
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    getListings();
+  },[])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span className="heading">Add application information!</span>
+      <InputField />
+      <span className="heading">Current Applications</span>
     </div>
   );
 }

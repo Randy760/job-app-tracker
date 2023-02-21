@@ -1,0 +1,57 @@
+.input {
+    display: flex;
+    width: 90%;
+    position: relative;
+    align-items: center;
+}
+
+.inputFieldLeft {
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+    padding: 20px 30px;
+    font-size: 25x;
+    border: none;
+    transition: .2s;
+    box-shadow: inset 0 0 2.5px black;
+}
+
+.inputFieldRight {
+    width: 100%;
+    border-radius: 0px 50px 50px 0px;
+    padding: 20px 30px;
+    font-size: 25x;
+    border: none;
+    transition: .2s;
+    box-shadow: inset 0 0 2.5px black;
+}
+
+.inputFieldIn {
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 25x;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 2.5px black;
+}
+
+.createListingBtn {
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0px;
+    border: none;
+    transform: scale(.8);
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 2.5px black;
+}
+
+.createListingBtn:hover {
+    transform: scale(.8);
+    box-shadow: 0 0 5px black;
+    background-color: green;
+}
